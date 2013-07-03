@@ -1654,7 +1654,7 @@
 		findOrCreate: function( attributes, options ) {
 			options || ( options = {} );
 			var parsedAttributes = ( _.isObject( attributes ) && options.parse && this.prototype.parse ) ?
-				this.prototype.parse( _.clone( attributes ) ) : attributes;
+				this.prototype.parse( _.clone( attributes ), options ) : attributes;
 
 			// Try to find an instance of 'this' model type in the store
 			var model = Backbone.Relational.store.find( this, parsedAttributes );
